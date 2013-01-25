@@ -1,0 +1,103 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	background: url('fundo.png') 0 0 repeat-x;
+	font-family: Verdana,sans-serif,Arial,Helvetica;
+}
+
+.top {
+	padding: 5px;
+	border-bottom: 1px solid #ddd;
+	font-size:11px;
+	display: table;
+	width: 100%;
+	box-sizing: border-box;
+	.top-count{
+		float:left;
+	}
+	.top-menu{
+		float:right;
+		a{
+			color: black;
+			text-decoration: none;
+		}
+	}
+}
+
+.search-bar {
+	position: absolute;
+	background: url('bg-search.png') repeat-x;
+	width: 100%;
+	height: 200px;
+	top: 50%;
+	margin-top: -100px;
+	padding-top: 18px;
+	.search-bar-blue{
+		height:142px;
+		.logo {
+			float:left;
+			margin-right:40px;
+		}
+		.home-buttons{
+			margin-top:67px;
+			margin-right:50px;
+			float:right;
+			.button{
+				background: url('button-blue.png') no-repeat;
+				height: 30px;
+				width: 81px;
+				font-size: 10px;
+				color:white;
+				margin-right:10px;
+			}
+			.button:hover{
+				background-position: 0 -30px;
+			}
+		}
+		.input-search{
+			background: url('input.png') repeat-x;
+			display: inline-block;
+			height:32px;
+			margin-top:67px;
+			input {
+				background:none;
+				border:none;
+				padding: 6px 12px;
+				color: #555;
+				width: 260px;
+			}
+			.button-go{
+				background: url('button-go.png') no-repeat;
+				text-indent: -9999px;
+				width:30px;
+				height:30px;
+				margin: 0px;
+				padding: 0px;
+			}
+			.button-go:hover{
+				background-position: 0 -30px;
+			}
+		}
+	}
+	.footer{
+		text-align: center;
+		font-size: 10px;
+		color: #BBB;
+		padding: 10px;
+		a{
+			color: #BBB;
+		}
+	}
+}
+
+button{
+	background: none;
+	border: none;
+}
+
+.marge {
+	width: 960px;
+	margin: 0 auto;
+}

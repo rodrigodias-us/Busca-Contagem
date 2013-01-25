@@ -55,6 +55,9 @@ body {
 			.button:hover{
 				background-position: 0 -30px;
 			}
+			.button:active{
+				background-position: 0 -60px;
+			}
 		}
 		.input-search{
 			background: url('input.png') repeat-x;
@@ -76,8 +79,11 @@ body {
 				margin: 0px;
 				padding: 0px;
 			}
-			.button-go:hover{
+			.button-go:active{
 				background-position: 0 -30px;
+			}
+			.button-go:hover{
+				background-position: 0 -60px;
 			}
 		}
 	}
@@ -100,4 +106,21 @@ button{
 .marge {
 	width: 960px;
 	margin: 0 auto;
+}
+
+footer{
+	display: none;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	border-top: 1px solid #ddd;
+	background: white;
+	font-size: 10px;
+	color: #BBB;
+	padding: 10px;
+	a{
+		color: #BBB;
+	}
 }

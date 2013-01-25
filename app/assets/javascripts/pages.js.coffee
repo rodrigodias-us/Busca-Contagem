@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-page = (event) ->
+pesquisar = (event) ->
 	if $('#search-input').val().length > 3
 		$('.search-bar').animate {
 			"top" : 25,
@@ -23,7 +23,7 @@ home = (event) ->
 	$('footer').fadeOut "fast"
 
 $('#home').click home
-$('#search-button').click page
+$('#search-button').click pesquisar
 $('#search-input').keypress (event) ->
 	if(event.keyCode == 13)
 		pesquisar event

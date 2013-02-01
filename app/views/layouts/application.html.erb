@@ -32,7 +32,7 @@
   <%= javascript_include_tag "modernizr" %>
 </head>
 
-<body>
+<body onload="$('#search-input').focus()">
 	
 	<div class="top">
 		<div class="top-count">Buscando em mais de <b><%= Anuncio.count %> empresas cadastradas</b> em Contagem!</div>

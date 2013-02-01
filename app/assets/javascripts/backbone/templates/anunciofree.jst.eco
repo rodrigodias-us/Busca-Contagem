@@ -1,0 +1,8 @@
+<div class="anuncio free">
+	<div class="tel">
+		<%= @anuncio.attributes.telefones[0]?.telefone %>
+		<%= @anuncio.attributes.telefones[1]?.telefone %>
+		<%= @anuncio.attributes.telefones[2]?.telefone %>
+	</div>
+	<div class="title"><%= @anuncio.get 'titulo' %></div>
+</div>

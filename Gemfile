@@ -7,6 +7,9 @@ gem 'rails', '3.2.11'
 
 gem 'mysql2'
 gem 'modernizr-rails'
+gem 'kaminari'
+gem "rails-backbone"
+gem 'eco'
 
 group :development do
   gem 'sqlite3'

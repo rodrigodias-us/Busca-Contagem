@@ -1,7 +1,9 @@
 Site::Application.routes.draw do
   get "pages/home"
-
-  get "xuper/apontador"
+    
+  namespace :api do
+      match 'anuncios/busca/:s(/page=:p)' => "anuncios#busca"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,6 +5,7 @@
 body {
 	background: url('fundo.png') 0 0 repeat-x;
 	font-family: Verdana,sans-serif,Arial,Helvetica;
+	overflow-y: scroll;
 }
 
 .top {
@@ -32,7 +33,7 @@ body {
 	width: 100%;
 	height: 200px;
 	top: 50%;
-	margin-top: -100px;
+	margin-top: -80px;
 	padding-top: 18px;
 	.search-bar-blue{
 		height:142px;
@@ -98,6 +99,11 @@ body {
 	}
 }
 
+.content{
+	margin-top: 170px;
+	display: none;
+}
+
 button{
 	background: none;
 	border: none;
@@ -106,6 +112,23 @@ button{
 .marge {
 	width: 960px;
 	margin: 0 auto;
+}
+
+.content-search {
+	padding-top:25px;
+	padding-bottom: 35px;
+}
+
+.anuncio.free{
+	background: url("bg-anuncio-title.jpg");
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid rgb(218, 218, 218);
+	color: rgb(114, 114, 114);
+	margin-bottom:20px
+}
+.anuncio.free .tel{
+	float:right;
 }
 
 footer{

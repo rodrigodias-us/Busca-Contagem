@@ -31,4 +31,4 @@ production:
   pool: 5
   username: buscacontagem
   password: "RD2220casa"
-  host: buscacontagem.com.br
+  host: 187.33.0.175

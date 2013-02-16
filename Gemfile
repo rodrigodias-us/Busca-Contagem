@@ -18,6 +18,7 @@ end
 group :production do
   # gem 'pg'
   gem 'execjs'
+  gem 'therubyracer'
 end
 
 # Gems used only for assets and not required

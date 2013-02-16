@@ -21,4 +21,14 @@ class Api::AnunciosController < Api::ApiController
     }
   end
   
+  def wavbusca
+    upload = params[:upload]
+    name =  upload['datafile'].original_filename
+    directory = "public/temp"
+    # create the file path
+    path = File.join(directory, name)
+    # write the file
+    File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
+  end
+  
 end

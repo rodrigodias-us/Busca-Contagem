@@ -17,9 +17,7 @@ class Site.Routers.SearchesRouter extends Backbone.Router
 		window.query = query
 		window.page = 1
 		window.busca.url = "api/anuncios/busca/" + query
-		window.busca.fetch().success (collection) ->
-			_.each window.busca.models, (model) ->
-				window.result_view.anuncioAdd model
+		window.busca.load()
 				
 	paged: (query,page) ->
 		console.log "Buscando Pagina " + page + " de : " + query
@@ -27,6 +25,4 @@ class Site.Routers.SearchesRouter extends Backbone.Router
 		window.query = query
 		window.page = parseInt page
 		window.busca.url = "api/anuncios/busca/" + query + "/page=" + page
-		window.busca.fetch().success (collection) ->
-			_.each window.busca.models, (model) ->
-				window.result_view.anuncioAdd model
+		window.busca.load()

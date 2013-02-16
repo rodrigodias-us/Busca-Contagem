@@ -29,15 +29,10 @@ home = (e) ->
 		}
 		$('.search-bar .footer').fadeIn "fast"
 		$('footer').fadeOut "fast"
-		
-scrolled = (e) ->
-	if ($(window).innerHeight() + $(window).scrollTop()) >= $("body").height() && $.ajax().state() == "pending"
-		window.router.navigate "pesquisa/" + window.query + '/page/' + (window.page+1), {trigger: true}
 
 # Fim das Ações
 
 $('#home').click home
-$(window).on 'scroll', scrolled
 $('#search-button').click pesquisar
 $('#search-input').keypress (event) ->
 	if(event.keyCode == 13)

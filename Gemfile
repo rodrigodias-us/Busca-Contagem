@@ -10,7 +10,6 @@ gem 'modernizr-rails'
 gem 'kaminari'
 gem "rails-backbone"
 gem 'eco'
-gem 'multipart-post'
 
 group :development do
   gem 'sqlite3'

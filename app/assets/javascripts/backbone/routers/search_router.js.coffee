@@ -16,7 +16,7 @@ class Site.Routers.SearchesRouter extends Backbone.Router
 		window.busca = new Site.Collections.BuscaCollection
 		window.query = query
 		window.page = 1
-		window.busca.url = "/api/anuncios/busca/" + query
+		window.busca.url = "http://buscacontagem.com.br/api/anuncios/busca/" + query
 		window.busca.load()
 				
 	paged: (query,page) ->
@@ -24,5 +24,5 @@ class Site.Routers.SearchesRouter extends Backbone.Router
 		window.busca ?= new Site.Collections.BuscaCollection
 		window.query = query
 		window.page = parseInt page
-		window.busca.url = "/api/anuncios/busca/" + query + "/page=" + page
+		window.busca.url = "http://buscacontagem.com.br/api/anuncios/busca/" + query + "/page=" + page
 		window.busca.load()

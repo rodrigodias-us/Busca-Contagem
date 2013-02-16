@@ -6,8 +6,8 @@ set :deploy_to, "/home/buscacontagem/public_html"
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "buscacontagem.com.br"                          # Your HTTP server, Apache/etc
-role :app, "buscacontagem.com.br"                          # This may be the same as your `Web` server
+role :web, "www.buscacontagem.com.br"                          # Your HTTP server, Apache/etc
+role :app, "www.buscacontagem.com.br"                          # This may be the same as your `Web` server
 role :db,  "buscacontagem.com.br", :primary => true # This is where Rails migrations will run
 role :db,  "buscacontagem.com.br"
 

@@ -2,8 +2,8 @@ Site::Application.routes.draw do
   get "pages/home"
     
   namespace :api do
+      post 'wav/busca' => "anuncios#wavbusca"
       match 'anuncios/busca/:s(/page=:p)' => "anuncios#busca"
-      post 'anuncios/wav/busca' => "anuncios#wavbusca"
   end
 
   # The priority is based upon order of creation:

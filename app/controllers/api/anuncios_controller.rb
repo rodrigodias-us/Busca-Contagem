@@ -22,13 +22,49 @@ class Api::AnunciosController < Api::ApiController
   end
   
   def wavbusca
-    upload = params[:upload]
-    name =  upload['datafile'].original_filename
+    require "net/http"
+    
+    upload = params[:data]
+    
+    name =  "tempRec.wav"
+    nameFlac = "tempRec.flac"
+    
     directory = "public/temp"
+    
     # create the file path
     path = File.join(directory, name)
+    flacPath = File.join(directory, nameFlac)
+    
     # write the file
-    File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
+    File.open(path, "wb") { |f| f.write(upload.read) }
+    
+    # convert
+    system("sox #{path} #{flacPath}")
+    
+    flac = File.open(flacPath).read
+    
+    uri = URI.parse("http://www.google.com/speech-api/v1/recognize?xjerr=1&client=chromium&pfilter=2&lang=pt_BR&maxresults=6")
+    
+    req = Net::HTTP::Post.new "#{uri.path}?#{uri.query}"
+      
+      req.body = '------WebKitFormBoundaryq2vA3BmMPYvC6gDN
+
+Content-Disposition: form-data; name="file"; filename="tempRec.flac"
+
+Content-Type: application/octet-stream
+
+' +flac+ '
+------WebKitFormBoundaryq2vA3BmMPYvC6gDN--
+'
+    
+    req["Content-Type"] = "audio/x-flac; rate=16000"
+    
+    http = Net::HTTP.new(uri.host, uri.port)
+    response = http.start {|htt| htt.request(req)}
+    logger.debug response.body
+    
+    render :json => JSON.parse(response.body)
+    
   end
   
 end

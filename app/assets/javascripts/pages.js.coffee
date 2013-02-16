@@ -37,3 +37,5 @@ $('#search-button').click pesquisar
 $('#search-input').keypress (event) ->
 	if(event.keyCode == 13)
 		pesquisar event
+		
+Backbone.history.start({pushState: true});

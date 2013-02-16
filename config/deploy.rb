@@ -6,12 +6,12 @@ set :deploy_to, "/home/buscacontagem/public_html"
 # set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "187.33.0.175"                          # Your HTTP server, Apache/etc
-role :app, "187.33.0.175"                          # This may be the same as your `Web` server
-role :db,  "187.33.0.175", :primary => true # This is where Rails migrations will run
-role :db,  "187.33.0.175"
+role :web, "buscacontagem.com.br"                          # Your HTTP server, Apache/etc
+role :app, "buscacontagem.com.br"                          # This may be the same as your `Web` server
+role :db,  "buscacontagem.com.br", :primary => true # This is where Rails migrations will run
+role :db,  "buscacontagem.com.br"
 
-set :user, "root"
+set :user, "buscacontagem"
 set :use_sudo, false
 
 set :keep_releases, 5

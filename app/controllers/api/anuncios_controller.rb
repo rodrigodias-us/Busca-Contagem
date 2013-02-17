@@ -63,7 +63,7 @@ Content-Type: application/octet-stream
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.start {|htt| htt.request(req)}
     
-    json = response.body
+    json = JSON.parse(response.body)
     
     render :json => json[:hypotheses]
     

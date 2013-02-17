@@ -62,13 +62,13 @@ Content-Type: application/octet-stream
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.start {|htt| htt.request(req)}
     
-    google = JSON.parse(response.body)
+    json = JSON.parse(response.body)
     
-    logger.debug google
+    logger.debug json
     
     sql = ""
     
-    google[:hypotheses][0][:utterance].split(' ').each do |w|
+    json[:hypotheses][0][:utterance].split(' ').each do |w|
       sql << "titulo LIKE '%#{w}%' AND "
     end
     

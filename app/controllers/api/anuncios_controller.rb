@@ -64,11 +64,11 @@ Content-Type: application/octet-stream
     
     json = JSON.parse(response.body)
     
-    logger.alert json.[:hypotheses]
+    logger.alert json[:hypotheses]
     
     sql = ""
     
-    json.[:hypotheses][:utterance].split(' ').each do |w|
+    json[:hypotheses][:utterance].split(' ').each do |w|
       sql << "titulo LIKE '%#{w}%' AND "
     end
     

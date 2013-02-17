@@ -64,18 +64,7 @@ Content-Type: application/octet-stream
     
     json = JSON.parse(response.body)
     
-    logger.info json[:hypotheses][0][:utterance]
-    
-    sql = ""
-    
-    json[:hypotheses][0][:utterance].split(' ').each do |w|
-      sql << "titulo LIKE '%#{w}%' AND "
-    end
-    
-    sql << "1 = 1"
-    data = Anuncio.where(sql)
-    
-    render :json => data.as_json(:include => [:telefones, :bairro])
+    render :json => json[:hypotheses]
     
   end
   

@@ -65,7 +65,7 @@ Content-Type: application/octet-stream
     
     json = response.body
     
-    render :json => json
+    render :json => json[:hypotheses]
     
   end
   

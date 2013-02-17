@@ -64,6 +64,8 @@ Content-Type: application/octet-stream
     
     google = JSON.parse(response.body)
     
+    logger.debug google
+    
     sql = ""
     
     google[:hypotheses][0][:utterance].split(' ').each do |w|

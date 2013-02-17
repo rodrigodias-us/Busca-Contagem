@@ -64,7 +64,7 @@ Content-Type: application/octet-stream
     
     json = JSON.parse(response.body)
     
-    logger.info json[:hypotheses]
+    logger.info json[:hypotheses][:utterance]
     
     sql = ""
     

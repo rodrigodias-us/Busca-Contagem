@@ -68,7 +68,7 @@ Content-Type: application/octet-stream
     
     sql = ""
     
-    json[:hypotheses][0][:utterance].split(' ').each do |w|
+    json.hypotheses[0].utterance.split(' ').each do |w|
       sql << "titulo LIKE '%#{w}%' AND "
     end
     

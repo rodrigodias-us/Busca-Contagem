@@ -23,6 +23,7 @@ class Api::AnunciosController < Api::ApiController
   
   def wavbusca
     require "net/http"
+    require "json"
     
     upload = params[:data]
     
@@ -64,7 +65,7 @@ Content-Type: application/octet-stream
     
     json = JSON.parse(response.body)
     
-    render :json => json[0]
+    render :json => json
     
   end
   

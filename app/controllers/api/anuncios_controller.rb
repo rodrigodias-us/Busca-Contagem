@@ -42,6 +42,7 @@ class Api::AnunciosController < Api::ApiController
     # convert
     system("sox #{path} #{flacPath}")
     
+    # get flac data
     flac = File.open(flacPath).read
     
     uri = URI.parse("http://www.google.com/speech-api/v1/recognize?xjerr=1&client=chromium&pfilter=2&lang=pt_BR&maxresults=6")
@@ -65,7 +66,7 @@ Content-Type: application/octet-stream
     
     json = JSON.parse(response.body)
     
-    render :json => json[0]
+    render :json => json
     
   end
   

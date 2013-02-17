@@ -61,9 +61,19 @@ Content-Type: application/octet-stream
     
     http = Net::HTTP.new(uri.host, uri.port)
     response = http.start {|htt| htt.request(req)}
-    logger.debug response.body
     
-    render :json => JSON.parse(response.body)
+    google = JSON.parse(response.body)
+    
+    sql = ""
+    
+    google[:hypotheses][0][:utterance].split(' ').each do |w|
+      sql << "titulo LIKE '%#{w}%' AND "
+    end
+    
+    sql << "1 = 1"
+    data = Anuncio.where(sql)
+    
+    render :json => data.as_json(:include => [:telefones, :bairro])
     
   end
   

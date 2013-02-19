@@ -1,4 +1,3 @@
-require "net/http"
 class Voicer 
   
   # Nome temporario dos arquivos de voz
@@ -7,6 +6,7 @@ class Voicer
   @@directory = "tmp/voicer"
   
   def self.convert(data)
+    require 'tempfile'
         
     # Cria os arquivos temporarios
     wpath = File.join(@@directory, "#{@@nameTemp}.wav")
@@ -23,6 +23,7 @@ class Voicer
   end
   
   def self.googleRead(data)
+    require "net/http"
     
     # Converte usando o Sox
     flac = self.convert(data)

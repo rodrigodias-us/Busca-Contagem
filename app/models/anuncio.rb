@@ -17,6 +17,7 @@ class Anuncio < ActiveRecord::Base
     data = self.where(sql).page(p).per(10)
     
     {
+      query: s
       total: self.where(sql).count,
       total_pages: (self.where(sql).count/10).ceil,
       page: p,

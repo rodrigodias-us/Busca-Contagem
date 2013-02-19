@@ -5,9 +5,7 @@ class Voicer
   # Diretorio Temporario
   @@directory = "tmp/voicer"
   
-  def self.convert(data)
-    require 'tempfile'
-        
+  def self.convert(data)        
     # Cria os arquivos temporarios
     wpath = File.join(@@directory, "#{@@nameTemp}.wav")
     fpath = File.join(@@directory, "#{@@nameTemp}.flac")

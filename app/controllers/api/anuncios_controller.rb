@@ -8,7 +8,7 @@ class Api::AnunciosController < Api::ApiController
     gJson = Voicer.googleRead(params[:data])
     
     if gJson["confidence"].to_f > 0.5
-      render :json => Anuncio.busca(gJson["utterance"])
+      render :json => Anuncio.buscaMobile(gJson["utterance"])
     else
       render :json => {error: "Resultado abaixo de 0.5"}
     end

@@ -3,7 +3,7 @@ class Voicer
   # Nome temporario dos arquivos de voz
   @@nameTemp = "tempRec"
   # Diretorio Temporario
-  @@directory = "tmp/voicer"
+  @@directory = "tmp"
   
   def self.convert(data)        
     # Cria os arquivos temporarios
